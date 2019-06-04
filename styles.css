@@ -21,8 +21,10 @@ div.jumbotron.footer{
   font-weight:100!important;
 }
 h1{
-  font: 71px/58px Impact,Helvetica,arial,sans-serif!important;
+  /* font: 71px/58px Impact,Helvetica,arial,sans-serif!important; */
+  font-family: Impact,Helvetica,arial,sans-serif!important;
   text-transform: uppercase!important;
+  font-size:8rem!important;
 }
 h2{
   font-size:4rem!important;
@@ -79,9 +81,18 @@ li.active{
   padding-right:0px;
 }
 .navbar-toggler{
-  position:absolute;
+  position:absolute!important;
   top:10px!important;
   right:10px!important;
+  background-color: #fafafa!important;
+  /* border: 3px solid gray!important; */
+  border: 5px solid rgba(0,0,0,.125)!important;
+  border-radius: 5px!important;
+  padding: .5rem;
+  font-size: 1.95rem;
+}
+.navbar-toggler-icon{
+
 }
 .PageNavigation {
   font-size: 14px;
