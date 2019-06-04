@@ -24,7 +24,6 @@ h1{
   /* font: 71px/58px Impact,Helvetica,arial,sans-serif!important; */
   font-family: Impact,Helvetica,arial,sans-serif!important;
   text-transform: uppercase!important;
-  font-size:8rem!important;
 }
 h2{
   font-size:4rem!important;
@@ -89,7 +88,7 @@ li.active{
   border: 5px solid rgba(0,0,0,.125)!important;
   border-radius: 5px!important;
   padding: .5rem;
-  font-size: 1.95rem;
+  font-size: 3rem;
 }
 .navbar-toggler-icon{
 
@@ -111,4 +110,17 @@ li.active{
 
 .PageNavigation .next {
   text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  h1 {
+    font-size:4rem!important;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* For tablet & desktop: */
+  h1 {
+    font-size:8rem!important;
+  }
 }
