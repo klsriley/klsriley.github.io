@@ -1,5 +1,4 @@
 exclude: ['README.md']
-theme: jekyll-theme-dinky
-baseurl: 
+baseurl:
 permalink: none
 paginate: 5 # posts per page
