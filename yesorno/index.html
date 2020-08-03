@@ -1,1 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Yes Or No</title>
+<style>
 
+body {
+	background-color:#F0F0F0;
+	font-family:"Futura", "Helvetica", "verdana", "lucida sans", "trebuchet", "Myriad Pro", "Lucida Grande", "Arial", sans-serif;
+	font-size:18px;
+	margin:0;
+	padding:0;
+	color:#000;
+	text-shadow:1px 1px 1px #CCC;
+	text-decoration:none;
+	overflow-x:hidden;
+}
+
+#main {
+	position:relative;
+	width:400px;
+	height:300px;
+	margin:30px auto 0px auto;
+	padding:0 20px 50px 20px;
+	background:#FFF;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+}
+
+#stage{
+	display:block;
+	float:left;
+	width:100%;
+}
+
+.playbutton {
+	display:block;
+	position:relative;
+	width: 300px;
+	height: 100px;
+	margin:50px auto 0px auto;
+	background:rgb(204,204,204);
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	text-align:center;
+	font-size:70px;
+	z-index:1;
+}
+
+.pianooverlay{
+	display:block;
+	position:relative;
+	float:left;
+	height:100px;
+	width:100%;
+	margin:0;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	z-index:99999;
+}
+
+.pianooverlay:hover{
+	background:rgba(0,0,255,0.3);
+}
+
+.pianooverlay:active{
+	background:rgba(72,61,139,0.7);
+}
+
+
+</style>
+</head>
+
+<body>
+	<div id="main">
+		<div id="stage">
+            <div class="playbutton">
+            	<div class="pianooverlay" onMouseDown="playYes();">Yes</div>
+        	</div>
+		</div>
+        <div id="stage">
+        	<div class="playbutton">
+            	<div class="pianooverlay" onMouseDown="playNo();">No</div>
+        	</div>
+		</div>
+	</div>
+
+
+    </span>
+</body>
+
+
+<script>
+var winArray=new Array(
+	new Audio("sounds/win1.mp3"),
+	new Audio("sounds/win2.mp3"),
+	new Audio("sounds/win3.mp3"),
+	new Audio("sounds/win4.mp3"),
+	new Audio("sounds/win5.mp3"),
+	new Audio("sounds/win6.mp3"),
+	new Audio("sounds/win7.mp3"),
+	new Audio("sounds/win8.mp3")
+);
+var failArray=new Array(
+	new Audio("sounds/fail1.mp3"),
+	new Audio("sounds/fail2.mp3"),
+	new Audio("sounds/fail3.mp3"),
+	new Audio("sounds/fail4.mp3"),
+	new Audio("sounds/fail5.mp3"),
+	new Audio("sounds/fail6.mp3"),
+	new Audio("sounds/fail7.mp3"),
+	new Audio("sounds/fail8.mp3"));
+
+function playYes() {
+	winArray[Math.floor(Math.random()*winArray.length)].play();
+	setTimeout(function(){
+		document.body.style.background = '#00FF00'
+	},25);
+	setTimeout(function(){
+		document.body.style.background = '#F0F0F0';
+	},1000);
+}
+
+function playNo(){
+	failArray[Math.floor(Math.random()*winArray.length)].play();
+	setTimeout(function(){
+		document.body.style.background = '#FF0000'
+	},25);
+	setTimeout(function(){
+		document.body.style.background = '#F0F0F0';
+	},1000);
+}
+
+</script>
+</html>
