@@ -16,19 +16,35 @@ body {
 	text-decoration:none;
 	overflow-x:hidden;
 }
+	
+html, body { height:100%; }
+	
+.container {
+  height: 100%;
+  position: relative;
+  border: 3px solid green;
+}
 
 #main {
-	position:relative;
+	/*position:relative;
+	margin:0px auto 0px auto;*/
 	width:400px;
 	height:300px;
-	margin:0px auto 0px auto;
 	padding:30px 20px 50px 20px;
 	background:#FFF;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
 }
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 	
-html, body { height:100%; }
+
 
 #stage{
 	display:block;
@@ -77,16 +93,18 @@ html, body { height:100%; }
 </head>
 
 <body>
-	<div id="main">
+	<div class="container">
+		<div id="main" class="center">
+			<div id="stage">
+		    <div class="playbutton">
+			<div class="pianooverlay" onMouseDown="playYes();">Yes</div>
+			</div>
+			</div>
 		<div id="stage">
-            <div class="playbutton">
-            	<div class="pianooverlay" onMouseDown="playYes();">Yes</div>
-        	</div>
-		</div>
-        <div id="stage">
-        	<div class="playbutton">
-            	<div class="pianooverlay" onMouseDown="playNo();">No</div>
-        	</div>
+			<div class="playbutton">
+			<div class="pianooverlay" onMouseDown="playNo();">No</div>
+			</div>
+			</div>
 		</div>
 	</div>
 
