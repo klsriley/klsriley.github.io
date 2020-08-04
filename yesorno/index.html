@@ -135,6 +135,7 @@ var failArray=new Array(
 	new Audio("sounds/fail8.mp3"));
 
 function playYes() {
+	stopAll()
 	document.body.style.background = '#00FF00';
 	winArray[Math.floor(Math.random()*winArray.length)].play();
 	setTimeout(function(){
