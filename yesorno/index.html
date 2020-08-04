@@ -117,23 +117,29 @@ var failArray=new Array(
 	new Audio("sounds/fail8.mp3"));
 
 function playYes() {
+	document.body.style.background = '#00FF00';
 	winArray[Math.floor(Math.random()*winArray.length)].play();
-	setTimeout(function(){
-		document.body.style.background = '#00FF00'
-	},25);
 	setTimeout(function(){
 		document.body.style.background = '#F0F0F0';
 	},1000);
 }
 
 function playNo(){
+	stopAll()
+	document.body.style.background = '#FF0000';
 	failArray[Math.floor(Math.random()*winArray.length)].play();
-	setTimeout(function(){
-		document.body.style.background = '#FF0000'
-	},25);
 	setTimeout(function(){
 		document.body.style.background = '#F0F0F0';
 	},1000);
+}
+	
+function stopAll(){
+	for(let i=0;i<Math.min(winArray.length,failArray.length);i++){
+		winArray[i].pause();
+		failArray[i].pause();
+		winArray[i].currentTime=0;
+		failArray[i].currentTime=0;
+	}
 }
 
 </script>
